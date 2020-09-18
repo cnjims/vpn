@@ -9,4 +9,4 @@ echo net.ipv4.ip_forward = 1 >> /etc/sysctl.conf
 sysctl -p
 iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
 iptables-save > /etc/sysconfig/iptables
-systemctl start pptpd.service
+service pptpd start
